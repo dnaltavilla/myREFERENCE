@@ -1,0 +1,21 @@
+{
+  "name": "FireSTUDIO myREFERENCE",
+  "short_name": "myREFERENCE",
+  "description": "Un'applicazione per il confronto di tracce audio di riferimento.",
+  "start_url": ".",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#1F2937",
+  "icons": [
+    {
+      "src": "icons/icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ]
+}
