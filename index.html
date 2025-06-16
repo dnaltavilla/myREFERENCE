@@ -121,7 +121,7 @@
         </div>
     </div>
     <div id="youtube-players" class="absolute -left-full"><div id="yt-player-0"></div><div id="yt-player-1"></div><div id="yt-player-2"></div><div id="yt-player-3"></div></div>
-    <div id="youtubeModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4"><h2 class="text-2xl font-bold mb-4 text-white" data-i18n="youtubeModalTitle">Incolla Link YouTube</h2><input type="url" id="youtubeLinkInput" class="w-full bg-gray-700 rounded-md p-3 text-white placeholder-gray-400" placeholder="https://www.youtube.com/watch?v=..."><div class="flex justify-end gap-3 mt-6"><button id="pasteYoutubeBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-2 px-5 rounded-lg transition-colors" data-i18n="pasteBtn">Incolla</button><button id="cancelYoutubeBtn" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-5 rounded-lg transition-colors" data-i18n="cancelBtn">Annulla</button><button id="confirmYoutubeBtn" class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-2 px-5 rounded-lg transition-colors" data-i18n="confirmBtn">Conferma</button></div></div></div>
+    <div id="youtubeModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4"><h2 class="text-2xl font-bold mb-4 text-white" data-i18n="youtubeModalTitle">Incolla Link YouTube</h2><input type="url" id="youtubeLinkInput" class="w-full bg-gray-700 rounded-md p-3 text-white placeholder-gray-400" placeholder="https://www.youtube.com/watch?v=..."><div class="flex justify-end gap-4 mt-6"><button id="cancelYoutubeBtn" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-6 rounded-lg transition-colors" data-i18n="cancelBtn">Annulla</button><button id="confirmYoutubeBtn" class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-lg transition-colors" data-i18n="confirmBtn">Conferma</button></div></div></div>
     <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4"><h2 class="text-2xl font-bold mb-6 text-white" data-i18n="settingsModalTitle">Impostazioni</h2><div class="space-y-4"><div class="flex items-center justify-between"><label for="autoSkipSwitch" class="text-lg" data-i18n="autoSkipLabel">Salto Automatico</label><button id="autoSkipSwitch" class="relative inline-flex items-center h-6 rounded-full w-11 transition-colors bg-gray-600"><span id="autoSkipSwitchKnob" class="inline-block w-4 h-4 transform bg-white rounded-full transition-transform translate-x-1"></span></button></div><div class="flex items-center justify-between"><label for="autoSkipDuration" data-i18n="autoSkipDurationLabel">Durata Auto-Skip (s)</label><input type="number" id="autoSkipDuration" min="1" class="bg-gray-700 rounded-md w-20 p-2 text-center text-white"></div><div class="flex items-center justify-between"><label for="skipInterval" data-i18n="skipIntervalLabel">Intervallo Salto (s)</label><input type="number" id="skipInterval" min="1" class="bg-gray-700 rounded-md w-20 p-2 text-center text-white"></div><div class="flex items-center justify-between"><label for="keepScreenOnSwitch" class="text-lg" data-i18n="keepScreenOnLabel">Mantieni Schermo Attivo</label><button id="keepScreenOnSwitch" class="relative inline-flex items-center h-6 rounded-full w-11 transition-colors bg-gray-600"><span id="keepScreenOnSwitchKnob" class="inline-block w-4 h-4 transform bg-white rounded-full transition-transform translate-x-1"></span></button></div><div class="pt-4 border-t border-gray-700"><button id="autoGainBtn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-4 rounded-lg transition-colors" data-i18n="autoGainBtn">Gain Automatico (BETA)</button></div><div class="pt-4 mt-2 border-t border-gray-700"><button id="showCreditsBtn" class="w-full bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 px-4 rounded-lg transition-colors" data-i18n="creditsBtnLabel">Crediti</button></div></div><button id="closeSettingsBtn" class="mt-8 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-opacity" data-i18n="closeBtn">Chiudi</button></div></div>
     <div id="helpModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 p-4"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-lg mx-4 overflow-y-auto max-h-screen"><h3 id="helpTitle" class="text-xl font-bold mb-4 text-orange-400"></h3><div id="helpContent" class="text-gray-300"></div><button id="closeHelpBtn" class="mt-6 w-full bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-lg transition-colors" data-i18n="helpModalClose">OK</button></div></div>
     <div id="creditsModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 p-4"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4 text-center"><h2 class="text-2xl font-bold mb-4 text-white" data-i18n="creditsModalTitle">Crediti</h2><p class="text-gray-300"><span data-i18n="creditsLine1">Applicazione ideata da</span><br><b class="text-orange-400">Marco Masdea</b><br>(Fire Music - Palmi RC)</p><p class="text-sm text-gray-500 mt-4" data-i18n="creditsLine2">Progettazione a cura di Marco Masdea e Daniele Altavilla</p><p class="text-xs text-gray-500 mt-8" data-i18n="version">Versione 2.1.1</p><button id="closeCreditsBtn" class="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-opacity" data-i18n="closeBtn">Chiudi</button></div></div>
@@ -130,8 +130,6 @@
 <script>
     const translations = {
         en: {
-            // MODIFICA QUI: Aggiunta traduzione per il pulsante Incolla
-            pasteBtn: "Paste",
             creditsBtnLabel: "Credits",
             helpBtnTitle: "Help",
             clearLabel: "Clear",
@@ -188,8 +186,6 @@
             helpSuggestion: "Tip: Long-press a top-bar icon for a quick guide on that specific command."
         },
         it: {
-            // MODIFICA QUI: Aggiunta traduzione per il pulsante Incolla
-            pasteBtn: "Incolla",
             creditsBtnLabel: "Crediti",
             helpBtnTitle: "Aiuto",
             clearLabel: "Pulisci",
@@ -228,7 +224,7 @@
             creditsModalTitle: "Crediti",
             creditsLine1: "Applicazione ideata da",
             creditsLine2: "Progettazione a cura di Marco Masdea e Daniele Altavilla",
-            version: "Versione 2.1.1",
+            version: "Versione 2.2",
             helpModalClose: "OK",
             helpTitle: "Guida ai Comandi",
             helpLi1Title: "Caricamento Tracce",
@@ -294,8 +290,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                 globalHelpBtn: query('#globalHelpBtn'),
                 langBtn: query('#langBtn'),
                 settings: { modal: query('#settingsModal'), openBtn: query('#settingsBtn'), closeBtn: query('#closeSettingsBtn'), autoSkipSwitch: query('#autoSkipSwitch'), autoSkipSwitchKnob: query('#autoSkipSwitchKnob'), autoSkipDurationInput: query('#autoSkipDuration'), skipIntervalInput: query('#skipInterval'), keepScreenOnSwitch: query('#keepScreenOnSwitch'), keepScreenOnSwitchKnob: query('#keepScreenOnSwitchKnob'), autoGainBtn: query('#autoGainBtn'), showCreditsBtn: query('#showCreditsBtn') }, 
-                // MODIFICA QUI: Selezionato il nuovo pulsante Incolla
-                youtube: { modal: query('#youtubeModal'), input: query('#youtubeLinkInput'), pasteBtn: query('#pasteYoutubeBtn'), confirmBtn: query('#confirmYoutubeBtn'), cancelBtn: query('#cancelYoutubeBtn'), }, 
+                youtube: { modal: query('#youtubeModal'), input: query('#youtubeLinkInput'), confirmBtn: query('#confirmYoutubeBtn'), cancelBtn: query('#cancelYoutubeBtn'), }, 
                 help: { modal: query('#helpModal'), title: query('#helpTitle'), content: query('#helpContent'), closeBtn: query('#closeHelpBtn') }, 
                 credits: { modal: query('#creditsModal'), closeBtn: query('#closeCreditsBtn') } 
             });
@@ -611,21 +606,6 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
         function attachEventListeners() { 
             ui.fileInputs.forEach((input, startIndex) => { input.addEventListener('change', (e) => { Array.from(e.target.files).forEach((file, fileIndex) => { if (startIndex + fileIndex < 4) loadAudioFile(file, startIndex + fileIndex); }); input.value = null; }); }); 
             ui.youtubeBtns.forEach((btn, index) => { btn.addEventListener('click', () => { if(btn.classList.contains('disabled')) return; app.targetSlotForLink = index; ui.youtube.modal.classList.remove('hidden'); ui.youtube.input.focus(); }); });
-            // MODIFICA QUI: Aggiunto event listener per il pulsante Incolla
-            ui.youtube.pasteBtn.addEventListener('click', async () => {
-                try {
-                    if (!navigator.clipboard?.readText) {
-                        console.warn("Clipboard API non disponibile.");
-                        return;
-                    }
-                    const text = await navigator.clipboard.readText();
-                    if (text) {
-                        ui.youtube.input.value = text;
-                    }
-                } catch (err) {
-                    console.error('Impossibile leggere il contenuto degli appunti: ', err);
-                }
-            });
             ui.youtube.confirmBtn.addEventListener('click', () => { const url = ui.youtube.input.value; if (url && app.targetSlotForLink !== -1) loadYoutubeLink(url, app.targetSlotForLink); ui.youtube.input.value = ''; ui.youtube.modal.classList.add('hidden'); app.targetSlotForLink = -1; }); 
             ui.youtube.cancelBtn.addEventListener('click', () => { ui.youtube.input.value = ''; ui.youtube.modal.classList.add('hidden'); app.targetSlotForLink = -1; }); 
             ui.playPauseBtn.addEventListener('click', () => { if (app.activeSlotIndex !== -1) playSlot(app.activeSlotIndex); }); 
