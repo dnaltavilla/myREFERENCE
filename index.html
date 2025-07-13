@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <script src="https://www.youtube.com/iframe_api"></script>
     <style>
-        html, body { height: 100%; overflow: hidden; background-color: #111827; }
+        html, body { height: 100%; background-color: #111827; }
         body { font-family: 'Inter', sans-serif; touch-action: manipulation; }
         .file-input {
             position: absolute;
@@ -44,8 +44,8 @@
         .upload-label-container { min-height: 2.5rem; display: flex; align-items: center; justify-content: center; }
     </style>
 </head>
-<body class="bg-gray-900 text-gray-200 flex items-center justify-center">
-    <div class="main-container w-full h-full p-2 sm:p-4">
+<body class="bg-gray-900 text-gray-200 flex flex-col min-h-screen">
+    <div class="main-container w-full flex-grow p-2 sm:p-4 overflow-auto">
         <div class="flex-shrink-0 flex justify-between items-center pb-2 px-2">
             <div><h1 class="text-xl sm:text-2xl font-bold tracking-wider text-white">FireSTUDIO <span class="font-light text-orange-400">myREFERENCE</span></h1><p class="text-xs text-gray-500"><a href="http://www.firemusic.it/">by Marco Masdea - Fire Music - Palmi (RC) </a><button id="globalHelpBtn" class="ml-2 p-1 rounded-full text-gray-500 hover:text-white hover:bg-gray-700 transition-colors inline-block align-middle" data-i18n-title="helpBtnTitle" title="Aiuto"><svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.228 9c.549-1.165 2.03-2 3.772-2 2.21 0 4 1.343 4 3 0 1.4-1.278 2.575-3.006 2.907-.542.104-.994.54-.994 1.093m0 3h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg></button></p></div>
             <div class="flex items-center gap-4 sm:gap-5">
@@ -122,9 +122,9 @@
     </div>
     <div id="youtube-players" class="absolute -left-full"><div id="yt-player-0"></div><div id="yt-player-1"></div><div id="yt-player-2"></div><div id="yt-player-3"></div></div>
     <div id="youtubeModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4"><h2 class="text-2xl font-bold mb-4 text-white" data-i18n="youtubeModalTitle">Incolla Link YouTube</h2><input type="url" id="youtubeLinkInput" class="w-full bg-gray-700 rounded-md p-3 text-white placeholder-gray-400" placeholder="https://www.youtube.com/watch?v=..."><div class="flex justify-end gap-4 mt-6"><button id="cancelYoutubeBtn" class="bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-6 rounded-lg transition-colors" data-i18n="cancelBtn">Annulla</button><button id="confirmYoutubeBtn" class="bg-orange-600 hover:bg-orange-500 text-white font-bold py-2 px-6 rounded-lg transition-colors" data-i18n="confirmBtn">Conferma</button></div></div></div>
-    <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4"><h2 class="text-2xl font-bold mb-6 text-white" data-i18n="settingsModalTitle">Impostazioni</h2><div class="space-y-4"><div class="flex items-center justify-between"><label for="autoSkipSwitch" class="text-lg" data-i18n="autoSkipLabel">Salto Automatico</label><button id="autoSkipSwitch" class="relative inline-flex items-center h-6 rounded-full w-11 transition-colors bg-gray-600"><span id="autoSkipSwitchKnob" class="inline-block w-4 h-4 transform bg-white rounded-full transition-transform translate-x-1"></span></button></div><div class="flex items-center justify-between"><label for="autoSkipDuration" data-i18n="autoSkipDurationLabel">Durata Auto-Skip (s)</label><input type="number" id="autoSkipDuration" min="1" class="bg-gray-700 rounded-md w-20 p-2 text-center text-white"></div><div class="flex items-center justify-between"><label for="skipInterval" data-i18n="skipIntervalLabel">Intervallo Salto (s)</label><input type="number" id="skipInterval" min="1" class="bg-gray-700 rounded-md w-20 p-2 text-center text-white"></div><div class="flex items-center justify-between"><label for="keepScreenOnSwitch" class="text-lg" data-i18n="keepScreenOnLabel">Mantieni Schermo Attivo</label><button id="keepScreenOnSwitch" class="relative inline-flex items-center h-6 rounded-full w-11 transition-colors bg-gray-600"><span id="keepScreenOnSwitchKnob" class="inline-block w-4 h-4 transform bg-white rounded-full transition-transform translate-x-1"></span></button></div><div class="pt-4 border-t border-gray-700"><button id="autoGainBtn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-4 rounded-lg transition-colors" data-i18n="autoGainBtn">Gain Automatico (BETA)</button></div><div class="pt-4 mt-2 border-t border-gray-700"><button id="showCreditsBtn" class="w-full bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 px-4 rounded-lg transition-colors" data-i18n="creditsBtnLabel">Crediti</button></div></div><button id="closeSettingsBtn" class="mt-8 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-opacity" data-i18n="closeBtn">Chiudi</button></div></div>
+    <div id="settingsModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4"><h2 class="text-2xl font-bold mb-6 text-white" data-i18n="settingsModalTitle">Impostazioni</h2><div class="space-y-4"><div class="flex items-center justify-between"><label for="autoSkipSwitch" class="text-lg" data-i18n="autoSkipLabel">Salto Automatico</label><button id="autoSkipSwitch" class="relative inline-flex items-center h-6 rounded-full w-11 transition-colors bg-gray-600"><span id="autoSkipSwitchKnob" class="inline-block w-4 h-4 transform bg-white rounded-full transition-transform translate-x-1"></span></button></div><div class="flex items-center justify-between"><label for="autoSkipDuration" data-i18n="autoSkipDurationLabel">Durata Auto-Skip (s)</label><input type="number" id="autoSkipDuration" min="1" class="bg-gray-700 rounded-md w-20 p-2 text-center text-white"></div><div class="flex items-center justify-between"><label for="skipInterval" data-i18n="skipIntervalLabel">Intervallo Salto (s)</label><input type="number" id="skipInterval" min="1" class="bg-gray-700 rounded-md w-20 p-2 text-center text-white"></div><div class="flex items-center justify-between"><label for="keepScreenOnSwitch" class="text-lg" data-i18n="keepScreenOnLabel">Mantieni Schermo Attivo</label><button id="keepScreenOnSwitch" class="relative inline-flex items-center h-6 rounded-full w-11 transition-colors bg-gray-600"><span id="keepScreenOnSwitchKnob" class="inline-block w-4 h-4 transform bg-white rounded-full transition-transform translate-x-1"></span></button></div><div class="pt-4 border-t border-gray-700"><button id="autoGainBtn" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-3 px-4 rounded-lg transition-colors" data-i18n="autoGainBtn">Gain Automatico (BETA)</button></div><div class="pt-4 border-t border-gray-700 mt-2"><button id="syncPlaybackBtn" class="w-full bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 rounded-lg transition-colors" data-i18n="syncPlaybackBtn">Sincronizza Riproduzione</button></div><div class="pt-4 mt-2 border-t border-gray-700"><button id="showCreditsBtn" class="w-full bg-gray-600 hover:bg-gray-500 text-white font-bold py-3 px-4 rounded-lg transition-colors" data-i18n="creditsBtnLabel">Crediti</button></div></div><button id="closeSettingsBtn" class="mt-8 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-opacity" data-i18n="closeBtn">Chiudi</button></div></div>
     <div id="helpModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 p-4"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-lg mx-4 overflow-y-auto max-h-screen"><h3 id="helpTitle" class="text-xl font-bold mb-4 text-orange-400"></h3><div id="helpContent" class="text-gray-300"></div><button id="closeHelpBtn" class="mt-6 w-full bg-gray-600 hover:bg-gray-500 text-white font-bold py-2 px-4 rounded-lg transition-colors" data-i18n="helpModalClose">OK</button></div></div>
-    <div id="creditsModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 p-4"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4 text-center"><h2 class="text-2xl font-bold mb-4 text-white" data-i18n="creditsModalTitle">Crediti</h2><p class="text-gray-300"><span data-i18n="creditsLine1">Applicazione ideata da</span><br><b class="text-orange-400">Marco Masdea</b><br>(Fire Music - Palmi RC)</p><p class="text-sm text-gray-500 mt-4" data-i18n="creditsLine2">Progettazione a cura di Marco Masdea e Daniele Altavilla</p><p class="text-xs text-gray-500 mt-8" data-i18n="version">Versione 2.1.1</p><button id="closeCreditsBtn" class="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-opacity" data-i18n="closeBtn">Chiudi</button></div></div>
+    <div id="creditsModal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden z-50 p-4"><div class="panel rounded-2xl shadow-2xl p-6 w-full max-w-sm mx-4 text-center"><h2 class="text-2xl font-bold mb-4 text-white" data-i18n="creditsModalTitle">Crediti</h2><p class="text-gray-300"><span data-i18n="creditsLine1">Applicazione ideata da</span><br><b class="text-orange-400">Marco Masdea</b><br>(Fire Music - Palmi RC)</p><p class="text-sm text-gray-500 mt-4" data-i18n="creditsLine2">Progettazione a cura di Marco Masdea e Daniele Altavilla</p><p class="text-xs text-gray-500 mt-8" data-i18n="version">Versione 2.4</p><button id="closeCreditsBtn" class="mt-4 w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:opacity-90 text-white font-bold py-3 px-4 rounded-lg transition-opacity" data-i18n="closeBtn">Chiudi</button></div></div>
     <audio id="audio1"></audio><audio id="audio2"></audio><audio id="audio3"></audio><audio id="audio4"></audio>
 
 <script>
@@ -164,11 +164,15 @@
             autoGainRefSilentAlert: "The reference track is silent or could not be analyzed.",
             autoGainAudioOnlyAlert: "To use Automatic Gain, first play an audio file (e.g., MP3) to use as a reference.",
             autoGainNotReadyAlert: "The audio analyzer is not ready yet.",
+            syncPlaybackBtn: "Synchronize Playback",
+            syncPlaybackOn: "Synchronize Playback (ON)",
+            syncPlaybackOff: "Synchronize Playback (OFF)",
+            syncPlaybackNoActiveTrackAlert: "No active track to synchronize from. Please play a track first.",
             closeBtn: "Close",
             creditsModalTitle: "Credits",
             creditsLine1: "Application conceived by",
             creditsLine2: "Design by Marco Masdea and Daniele Altavilla",
-            version: "Version 2.1.1",
+            version: "Version 2.5",
             helpModalClose: "OK",
             helpTitle: "Commands Guide",
             helpLi1Title: "Loading Tracks",
@@ -183,6 +187,8 @@
             helpLi5Content: "Configure options like auto-skip at the end of a track, the skip interval, and the function to keep the device screen always on.",
             helpLi6Title: "Automatic Gain (BETA)",
             helpLi6Content: "This feature analyzes the entire audio file to find its point of maximum volume (peak). It then calculates the average perceived loudness (RMS) within a 2-second window centered on that peak. This value is used to automatically adjust the gain of the other audio tracks, matching their loudness to the reference track. Note: The analysis may take a few seconds for long files.",
+            helpLi7Title: "Synchronize Playback",
+            helpLi7Content: "This function synchronizes the playback position of all loaded tracks to match the current time of the active track. Useful for comparing different versions of the same audio.",
             helpSuggestion: "Tip: Long-press a top-bar icon for a quick guide on that specific command."
         },
         it: {
@@ -220,11 +226,14 @@
             autoGainRefSilentAlert: "La traccia di riferimento è silente o non è stato possibile analizzarla.",
             autoGainAudioOnlyAlert: "Per usare il Gain Automatico, avvia prima la riproduzione di un file audio (es. MP3) che userai come riferimento.",
             autoGainNotReadyAlert: "L'analizzatore audio non è ancora pronto.",
+            syncPlaybackBtn: "Sincronizza Riproduzione",
+            syncPlaybackOn: "Sincronizza Riproduzione (ATTIVA)",
+            syncPlaybackOff: "Sincronizza Riproduzione (DISATTIVA)",
             closeBtn: "Chiudi",
             creditsModalTitle: "Crediti",
             creditsLine1: "Applicazione ideata da",
             creditsLine2: "Progettazione a cura di Marco Masdea e Daniele Altavilla",
-            version: "Versione 2.2",
+            version: "Versione 2.5",
             helpModalClose: "OK",
             helpTitle: "Guida ai Comandi",
             helpLi1Title: "Caricamento Tracce",
@@ -239,6 +248,8 @@
             helpLi5Content: "Configura opzioni come il salto automatico a fine traccia (Auto-Skip), l'intervallo di salto e la funzione per mantenere lo schermo del dispositivo sempre attivo.",
             helpLi6Title: "Gain Automatico (BETA)",
             helpLi6Content: "Questa funzione analizza l'intero file audio per trovare il punto di massimo volume (picco). Calcola quindi il volume medio percepito (RMS) in una finestra di 2 secondi attorno a quel picco. Questo valore viene usato per regolare automaticamente il gain delle altre tracce audio, allineando la loro loudness a quella del brano di riferimento. Nota: l'analisi può richiedere alcuni secondi per file lunghi.",
+            helpLi7Title: "Sincronizza Riproduzione",
+            helpLi7Content: "Questa funzione sincronizza la posizione di riproduzione di tutte le tracce caricate, allineandole al tempo corrente della traccia attiva. Utile per confrontare diverse versioni dello stesso audio.",
             helpSuggestion: "Suggerimento: Tieni premuto su un'icona della barra superiore per una guida rapida su quel comando specifico."
         }
     };
@@ -246,7 +257,7 @@
     const app = {
         slots: [], activeSlotIndex: -1, targetSlotForLink: -1,
         autoSkipTimer: null, masterTimeUpdater: null,
-        settings: { autoSkipEnabled: false, autoSkipDuration: 5, skipInterval: 10, keepScreenOn: false, language: 'it' },
+        settings: { autoSkipEnabled: false, autoSkipDuration: 5, skipInterval: 10, keepScreenOn: false, language: 'it', syncPlaybackEnabled: false },
         wakeLockSentinel: null,
         audio: { context: null, sources: [], analysers: [], gains: [], isSetup: false },
         uiState: { isGainView: false, isDraggingGain: false, dragStartIndex: -1, dragStartY: 0 }
@@ -289,7 +300,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                 toggleGainViewBtn: query('#toggleGainViewBtn'), 
                 globalHelpBtn: query('#globalHelpBtn'),
                 langBtn: query('#langBtn'),
-                settings: { modal: query('#settingsModal'), openBtn: query('#settingsBtn'), closeBtn: query('#closeSettingsBtn'), autoSkipSwitch: query('#autoSkipSwitch'), autoSkipSwitchKnob: query('#autoSkipSwitchKnob'), autoSkipDurationInput: query('#autoSkipDuration'), skipIntervalInput: query('#skipInterval'), keepScreenOnSwitch: query('#keepScreenOnSwitch'), keepScreenOnSwitchKnob: query('#keepScreenOnSwitchKnob'), autoGainBtn: query('#autoGainBtn'), showCreditsBtn: query('#showCreditsBtn') }, 
+                settings: { modal: query('#settingsModal'), openBtn: query('#settingsBtn'), closeBtn: query('#closeSettingsBtn'), autoSkipSwitch: query('#autoSkipSwitch'), autoSkipSwitchKnob: query('#autoSkipSwitchKnob'), autoSkipDurationInput: query('#autoSkipDuration'), skipIntervalInput: query('#skipInterval'), keepScreenOnSwitch: query('#keepScreenOnSwitch'), keepScreenOnSwitchKnob: query('#keepScreenOnSwitchKnob'), autoGainBtn: query('#autoGainBtn'), showCreditsBtn: query('#showCreditsBtn'), syncPlaybackBtn: query('#syncPlaybackBtn') }, 
                 youtube: { modal: query('#youtubeModal'), input: query('#youtubeLinkInput'), confirmBtn: query('#confirmYoutubeBtn'), cancelBtn: query('#cancelYoutubeBtn'), }, 
                 help: { modal: query('#helpModal'), title: query('#helpTitle'), content: query('#helpContent'), closeBtn: query('#closeHelpBtn') }, 
                 credits: { modal: query('#creditsModal'), closeBtn: query('#closeCreditsBtn') } 
@@ -327,6 +338,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                    ui.uploadLabels[index].textContent = t[`slot${index+1}`];
                 }
             });
+            updateSyncBtnUI(); // Update sync button text based on new language
         }
 
         function setupAudioProcessing() { if (app.audio.isSetup) return; try { app.audio.context = new (window.AudioContext || window.webkitAudioContext)(); app.slots.forEach((slot, index) => { if (!app.audio.sources[index]) app.audio.sources[index] = app.audio.context.createMediaElementSource(slot.audioPlayer); app.audio.analysers[index] = app.audio.context.createAnalyser(); app.audio.gains[index] = app.audio.context.createGain(); app.audio.analysers[index].fftSize = 2048; app.audio.sources[index].connect(app.audio.analysers[index]).connect(app.audio.gains[index]).connect(app.audio.context.destination); }); app.audio.isSetup = true; } catch (e) { console.error("Errore Web Audio API:", e); ui.settings.autoGainBtn.style.display = 'none'; } }
@@ -365,15 +377,18 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                 ui.playButtons[index].classList.remove('playing-number');
                 stopUpdatingUI();
             } else {
+                let currentTimeOfPreviousSlot = 0;
+                if (app.activeSlotIndex !== -1) {
+                    const prevSlot = app.slots[app.activeSlotIndex];
+                    if (prevSlot.type === 'audio') currentTimeOfPreviousSlot = prevSlot.audioPlayer.currentTime;
+                    else if (prevSlot.type === 'youtube' && prevSlot.ytPlayer?.getCurrentTime) currentTimeOfPreviousSlot = prevSlot.ytPlayer.getCurrentTime();
+                }
+
                 stopAll(index); 
                 
-                // --- INIZIO DELLA CORREZIONE ---
-                // Su dispositivi Apple, l'AudioContext potrebbe essere sospeso.
-                // Lo riattiviamo esplicitamente qui, all'interno del gesto utente (click).
                 if (app.audio.isSetup && app.audio.context.state === 'suspended') {
                     app.audio.context.resume();
                 }
-                // --- FINE DELLA CORREZIONE ---
 
                 if (slot.type === 'audio') slot.audioPlayer.play();
                 else slot.ytPlayer.playVideo();
@@ -381,8 +396,37 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                 ui.playButtons.forEach((btn, i) => btn.classList.toggle('playing-number', i === index));
                 startUpdatingUI();
                 if (app.settings.autoSkipEnabled) startAutoSkipTimer();
+
+                // Apply synchronization only if enabled and a previous slot was active
+                if (app.settings.syncPlaybackEnabled && currentTimeOfPreviousSlot > 0) {
+                    setSlotCurrentTime(index, currentTimeOfPreviousSlot);
+                }
             }
             updatePlayerUI();
+        }
+
+        function setSlotCurrentTime(index, time) {
+            const slot = app.slots[index];
+            if (!slot || !slot.type) return;
+
+            let clampedTime = Math.min(time, slot.duration > 0 ? slot.duration - 0.1 : time);
+            clampedTime = Math.max(0, clampedTime);
+
+            if (slot.type === 'audio') {
+                slot.audioPlayer.currentTime = clampedTime;
+            } else if (slot.type === 'youtube' && slot.ytPlayer?.seekTo) {
+                if (slot.ytPlayer.getPlayerState() !== YT.PlayerState.UNSTARTED) {
+                    slot.ytPlayer.seekTo(clampedTime, true);
+                } else {
+                    const onReady = (event) => {
+                        if (event.target === slot.ytPlayer) {
+                            slot.ytPlayer.seekTo(clampedTime, true);
+                            slot.ytPlayer.removeEventListener('onReady', onReady);
+                        }
+                    };
+                    slot.ytPlayer.addEventListener('onReady', onReady);
+                }
+            }
         }
 
         function updatePlayerUI() { 
@@ -487,6 +531,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                     <li><strong class="text-orange-400 text-base">${t.helpLi4Title}</strong><p class="text-gray-400">${t.helpLi4Content}</p></li>
                     <li><strong class="text-orange-400 text-base">${t.helpLi5Title}</strong><p class="text-gray-400">${t.helpLi5Content}</p></li>
                     <li><strong class="text-orange-400 text-base">${t.helpLi6Title}</strong><p class="text-gray-400">${t.helpLi6Content}</p></li>
+                    <li><strong class="text-orange-400 text-base">${t.helpLi7Title}</strong><p class="text-gray-400">${t.helpLi7Content}</p></li>
                 </ul>
                 <p class="mt-5 text-xs text-center text-gray-500">${t.helpSuggestion}</p>
             `;
@@ -554,6 +599,9 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
 
             try {
                 const referenceIndex = app.activeSlotIndex;
+                const referenceSlot = app.slots[referenceIndex];
+                const referenceCurrentGain = referenceSlot.gain;
+
                 const trackLoudness = new Array(app.slots.length).fill(0);
 
                 for (let i = 0; i < app.slots.length; i++) {
@@ -576,21 +624,20 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
                     return;
                 }
 
-                // Ciclo modificato per correggere il problema del gain cumulativo
                 for (let i = 0; i < app.slots.length; i++) {
                     if (i === referenceIndex) {
-                        continue; // Salta la traccia di riferimento, il suo gain non va toccato.
+                        continue; 
                     }
 
-                    // Se la traccia è un file audio analizzabile, calcola e applica il nuovo gain.
                     if (app.slots[i].type === 'audio' && trackLoudness[i] > 0) {
-                        const gainFactor = referenceLoudness / trackLoudness[i];
-                        // Il nuovo gain viene calcolato direttamente dal fattore, ignorando il gain precedente.
+                        const targetLoudness = referenceLoudness * referenceCurrentGain; 
+                        const gainFactor = targetLoudness / trackLoudness[i];
                         const newGain = Math.max(0, Math.min(2.0, gainFactor)); 
                         setGain(i, newGain);
+                    } else if (app.slots[i].type === 'youtube') {
+                        setGain(i, referenceCurrentGain);
                     } else {
-                        // Per tutte le altre tracce non di riferimento (es. YouTube, audio silenti), resetta il gain a 1.0 (0 dB).
-                        setGain(i, 1.0);
+                        setGain(i, referenceCurrentGain);
                     }
                 }
                 alert(t.autoGainDoneAlert);
@@ -600,6 +647,26 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
             } finally {
                 ui.settings.autoGainBtn.textContent = t.autoGainBtn;
                 ui.settings.autoGainBtn.disabled = false;
+            }
+        }
+
+        function toggleSynchronization() {
+            app.settings.syncPlaybackEnabled = !app.settings.syncPlaybackEnabled;
+            updateSyncBtnUI();
+            saveSettings();
+        }
+
+        function updateSyncBtnUI() {
+            const t = translations[app.settings.language];
+            const btn = ui.settings.syncPlaybackBtn;
+            if (app.settings.syncPlaybackEnabled) {
+                btn.classList.remove('bg-blue-600', 'hover:bg-blue-500');
+                btn.classList.add('bg-green-600', 'hover:bg-green-500');
+                btn.textContent = t.syncPlaybackOn;
+            } else {
+                btn.classList.remove('bg-green-600', 'hover:bg-green-500');
+                btn.classList.add('bg-blue-600', 'hover:bg-blue-500');
+                btn.textContent = t.syncPlaybackOff;
             }
         }
 
@@ -622,6 +689,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
             ui.globalHelpBtn.addEventListener('click', () => showGeneralHelp(false));
             ui.help.closeBtn.addEventListener('click', () => ui.help.modal.classList.add('hidden')); 
             ui.settings.autoGainBtn.addEventListener('click', autoGain); 
+            ui.settings.syncPlaybackBtn.addEventListener('click', toggleSynchronization); 
             ui.settings.autoSkipSwitch.addEventListener('click',()=>{ app.settings.autoSkipEnabled=!app.settings.autoSkipEnabled; updateSwitchUI(app.settings.autoSkipEnabled, ui.settings.autoSkipSwitch, ui.settings.autoSkipSwitchKnob); saveSettings(); if (!app.settings.autoSkipEnabled && app.autoSkipTimer) { clearTimeout(app.autoSkipTimer); app.autoSkipTimer = null; } }); 
             ui.settings.autoSkipDurationInput.addEventListener('change',(e)=>{const t=parseInt(e.target.value,10);if(t>0){app.settings.autoSkipDuration=t;saveSettings()}}); 
             ui.settings.skipIntervalInput.addEventListener('change',(e)=>{const t=parseInt(e.target.value,10);if(t>0){app.settings.skipInterval=t;ui.skipAmountLabel.textContent=`${t}s`;saveSettings()}}); 
@@ -724,6 +792,7 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
             ui.skipAmountLabel.textContent=`${app.settings.skipInterval}s`; 
             updateSwitchUI(app.settings.autoSkipEnabled, ui.settings.autoSkipSwitch, ui.settings.autoSkipSwitchKnob); 
             updateSwitchUI(app.settings.keepScreenOn, ui.settings.keepScreenOnSwitch, ui.settings.keepScreenOnSwitchKnob); 
+            updateSyncBtnUI(); // Ensure sync button UI is set correctly on load
             handleWakeLock(); 
         };
         
@@ -769,5 +838,18 @@ const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     });
   }
 </script>
+
+    <!-- <footer class="bg-gray-800 text-gray-200 py-4 mt-auto"> -->
+        <!-- <div class="container mx-auto flex items-center justify-center space-x-6"> -->
+            <!-- <a href="https://www.firemusic.it" target="_blank" class="underline hover:text-white"> -->
+                <!-- www.firemusic.it -->
+            <!-- </a> -->
+            <!-- <a href="https://www.instagram.com/firemusicpalmi/#" target="_blank" aria-label="Instagram"> -->
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-6 h-6 fill-current hover:text-white"> -->
+                    <!-- <path d="M7.75 2h8.5A5.75 5.75 0 0122 7.75v8.5A5.75 5.75 0 0116.25 22h-8.5A5.75 5.75 0 012 16.25v-8.5A5.75 5.75 0 017.75 2zm0 1.5A4.25 4.25 0 003.5 7.75v8.5A4.25 4.25 0 007.75 20.5h8.5A4.25 4.25 0 0020.5 16.25v-8.5A4.25 4.25 0 0016.25 3.5h-8.5zM12 7a5 5 0 110 10 5 5 0 010-10zm0 1.5a3.5 3.5 0 100 7 3.5 3.5 0 000-7zm5.75-.88a1.12 1.12 0 11-2.24 0 1.12 1.12 0 012.24 0z"/> -->
+                <!-- </svg> -->
+            <!-- </a> -->
+        <!-- </div> -->
+    <!-- </footer> -->
 </body>
 </html>
